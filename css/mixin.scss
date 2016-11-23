@@ -1,0 +1,66 @@
+@mixin yuan($size) {
+  width: $size;
+  height: $size;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+@mixin fangxin($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin changfang($width,$height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin juzhong {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+%juzhong {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+$b-size: 768px;
+@mixin onm($size:40px) {
+  @media screen and (max-width: $b-size) {
+    @content
+  }
+}
+
+$s-size: 480px;
+@mixin ons($size:40px) {
+  @media screen and (max-width: $s-size) {
+    @content
+  }
+}
+
+@mixin box {
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  border-shadow: 2px 3px 1px #ffffff;
+}
+
+@mixin useRem($device-size) {
+  $device-size-list:1306px,768px, 480px, 412px, 414px, 384px, 380px, 375px, 360px,320px,$device-size;
+  @each $list in $device-size-list {
+    @media screen and (max-width: #{$list}) {
+      html {
+        font-size: 100px * $list/$device-size;
+      }
+    }
+  }
+}

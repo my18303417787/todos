@@ -1,0 +1,396 @@
+@import url(base.css);
+@import "mixin";
+
+@mixin userRem($size){
+  $list:320px,360px,375px,380px,412px,414px, $size;
+
+  @each $i in $list{
+    @media screen and (min-width:#{$i}) {
+      html{
+        font-size:100px*$i/$size;
+      }
+    }
+  }
+}
+@include userRem(694px);
+/*
+@font-face {
+  font-family: "icon-font";
+  src: url(../ux_1476285806_7119439/iconfont.woff);
+}
+
+.icon-feiji:before {
+  content: "\e606";
+}
+
+.icon-hanbao:before {
+  content: "\e70a";
+}
+
+.icon-dabei:before {
+  content: "\353f";
+}
+
+.icon-bianqianmoshi:before {
+  content: "\e6ed";
+}
+
+.icon-shangpinmingcheng:before {
+  content: "\e676";
+}
+
+.icon-home:before {
+  content: "\f0068";
+}
+
+.icon-lingdang:before {
+  content: "\e60c";
+}
+
+.icon-duanxin:before {
+  content: "\e65e";
+}
+
+.icon-nanrentouxiang:before {
+  content: "\346d";
+}
+
+.icon-shezhi:before {
+  content: "\e651";
+}
+*/
+
+body {
+  font-size: 16px;
+  height: auto;
+  background: url(img/a.png)no-repeat;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 0.16rem;
+  padding: 0.2rem;
+  padding-left: 0.55rem;
+  padding-right: 0.55rem;
+  background-color: transparent;
+  text-align: justify;
+  transition: transform 0.8s ease;
+  &::after {
+    content: "";
+    width: 100%;
+    font-size: 0;
+    display: inline-block;
+    line-height: 0;
+    height: 0;
+  }
+  li {
+    font-size: 0.16rem;
+    display: inline-block;
+    color: #fff;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    &.active {
+      opacity: 1;
+    }
+  }
+  &.active {
+    transform: scale(0, 0);
+  }
+}
+
+//now开始
+.now {
+  height: auto;
+  padding-left: 0.23rem;
+  padding-right: 0.23rem;
+  background: transparent;
+  text-align: justify;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.8s ease;
+  h5 {
+    font-size: 0.18rem;
+    color: #ffffff;
+    font-weight: normal;
+  }
+  &::after {
+    content: "";
+    width: 100%;
+    font-size: 0;
+    display: inline-block;
+    line-height: 0;
+    height: 0;
+  }
+  .list {
+    margin-top: 0.14rem;
+    width: 1.86rem;
+    height: 0.44rem;
+    background: #fff;
+    border-radius: 0.1rem;
+    display: inline-block;
+    padding-left: 0.2rem;
+    padding-right: 0.5rem;
+    padding-top: 0.16rem;
+    position: relative;
+    overflow-x: hidden;
+    p {
+      width: 0.29rem;
+      height: 0.29rem;
+      position: absolute;
+      font-family: icon-font;
+      font-size: 0.25rem;
+      color: #96e3f5;
+    }
+    .content {
+      height: 0.28rem;
+      float: right;
+      margin-left: 0.35rem;
+      span {
+        display: block;
+        width: 100%;
+        font-size: 0.115rem;
+      }
+      .theme {
+        color: #000000;
+      }
+      .digest {
+        color: #d7d7d7;
+      }
+    }
+    .delet {
+      width: 0.6rem;
+      height: 0.35rem;
+      background-color: #ff5651;
+      position: absolute;
+      right: -1rem;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      line-height: 0.35rem;
+      text-align: center;
+      font-size: 0.16rem;
+      color: #fff;
+    }
+    &.active {
+      animation: zuofei 0.8s ease both;
+    }
+    &.active1 {
+      animation: feizou 0.8s ease both;
+    }
+  }
+  &.active3 {
+    transform: scale(0, 0);
+  }
+}
+
+@keyframes zuofei {
+  100% {
+    transform: translate3d(-0.9rem, 0, 0)
+  }
+}
+
+@keyframes feizou {
+  100% {
+    transform: translate3d(-200%, 0, 0)
+  }
+}
+
+//now结束
+//scheduled开始
+.sche {
+  height: auto;
+  padding-left: 0.23rem;
+  padding-right: 0.23rem;
+  background: transparent;
+  text-align: justify;
+  position: relative;
+  h5 {
+    font-size: 0.18rem;
+    color: #ffffff;
+    font-weight: normal;
+  }
+  &::after {
+    content: "";
+    width: 100%;
+    font-size: 0;
+    display: inline-block;
+    line-height: 0;
+    height: 0;
+  }
+  .list {
+    margin-top: 0.1rem;
+    width: 1.86rem;
+    height: 0.44rem;
+    background: #fff;
+    border-radius: 0.1rem;
+    display: inline-block;
+    padding-left: 0.2rem;
+    padding-right: 0.5rem;
+    padding-top: 0.16rem;
+    position: relative;
+    p {
+      width: 0.29rem;
+      height: 0.29rem;
+      position: absolute;
+      font-family: icon-font;
+      font-size: 0.25rem;
+      color: #96e3f5;
+    }
+    .content {
+      height: 0.28rem;
+      float: right;
+      margin-left: 0.35rem;
+      span {
+        display: block;
+        width: 100%;
+        font-size: 0.115rem;
+      }
+      .theme {
+        color: #000000;
+      }
+      .digest {
+        color: #d7d7d7;
+      }
+    }
+  }
+}
+
+//scheduled结束
+//bottom开始
+.bottom {
+  height: 0.51rem;
+  background-color: #273349;
+  text-align: justify;
+  position: relative;
+  transition: transform 0.8s ease;
+  &::after {
+    content: "";
+    width: 100%;
+    font-size: 0;
+    display: inline-block;
+    line-height: 0;
+    height: 0;
+  }
+  li {
+    width: 0.5rem;
+    height: 0.51rem;
+    display: inline-block;
+    position: relative;
+    &.active {
+      background-color: #141a28;
+    }
+    p {
+      width: 0.3rem;
+      height: 0.3rem;
+      font-family: icon-font;
+      font-size: 0.25rem;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+  .add {
+    background-color: #fed55f;
+    //position: relative;
+    p {
+      font-size: 0.3rem;
+    }
+  }
+  &.active {
+    transform: scale(0, 0);
+  }
+}
+
+//bottom结束
+//添加标签开始
+.addcontent {
+  position: absolute;
+  width: 3rem;
+  height: 3.62rem;
+  background: #48a1e3;
+  //background-color:red;
+  transform: translate3d(0, -300%, 0);
+  overflow-x:hidden;
+  left: 0;
+  top:100%;
+  &.active {
+    animation: big 0.8s ease both;
+  }
+  .off{
+    width:100%;
+    position: absolute;
+    left: 0.15rem;
+    top: 0.4rem;
+    z-index:3;
+    p {
+      color: #fff;
+      font-size: 0.3rem;
+      display:inline-block;
+    }
+  }
+  .title{
+    //width:100%;
+    padding:0.29rem 0.38rem 0 0.33rem;
+    height:1.04rem;
+    position: absolute;
+    top:0.5rem;
+    h3{
+      color:#fff;
+    }
+    input{
+      outline:none;
+      width:100%;
+      height:0.84rem;
+      background-color:transparent;
+      margin:0;
+      border:0;
+      padding:0;
+      font-size:20px;
+      color:#fff;
+      box-sizing:border-box;
+      border-bottom:1px solid #fff;
+    }
+  }
+  .lists{
+    padding:0.29rem 0.38rem 0 0.33rem;
+    height:1.34rem;
+    position: absolute;
+    top:2.23rem;
+   li{
+     color:#fff;
+     font-size:0.14rem;
+   }
+    .yes{
+      width:0.78rem;
+      height:0.37rem;
+      float: left;
+      text-align:center;
+      margin-top:10px;
+      background-color:#83c4ee;
+      line-height:0.37rem;
+    }
+    .later{
+      width:0.78rem;
+      height:0.37rem;
+      float:right;
+      text-align:center;
+      margin-top:10px;
+      line-height:0.37rem;
+      background-color:#83c4ee;
+    }
+  }
+}
+
+@keyframes big {
+  0% {
+    transform: translate3d(0, -200%, 0)
+  }
+  100% {
+    transform: translate3d(0, -147%, 0)
+  }
+}
+
+//添加标签结束
